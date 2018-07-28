@@ -1,10 +1,9 @@
 import React from "react";
 import "./Container.css";
 
-
 export const NavBar = (props) => (
     <nav className="navbar">
-        {/* <div className="container-fluid"> */}
+
         <ul>
             <li className="brand">
                 <a href="/">{props.children}
@@ -12,15 +11,15 @@ export const NavBar = (props) => (
                 </a>
             </li>
             <li >
-                {props.children}
+                {props.state}
             </li>
             <li>
-                {props.children}
+               Score: {props.score} | Top Score: {props.topScore}
             </li>
         </ul>
-        {/* </div> */}
     </nav>
 );
+
 export const Header = (props) => (
     <header className="header">
         <h1> {props.heading}</h1>
@@ -30,7 +29,7 @@ export const Header = (props) => (
 
 export const Main = (props) => (
     <main className="container">
-   
+        {props.children}
     </main>
 );
 
