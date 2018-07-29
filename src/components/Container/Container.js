@@ -3,7 +3,6 @@ import "./Container.css";
 
 export const NavBar = (props) => (
     <nav className="navbar">
-
         <ul>
             <li className="brand">
                 <a href="/">{props.children}
@@ -13,7 +12,7 @@ export const NavBar = (props) => (
             <li >
                 {props.state}
             </li>
-            <li>
+            <li onChange={props.handleTopScore()}>
                Score: {props.score} | Top Score: {props.topScore}
             </li>
         </ul>

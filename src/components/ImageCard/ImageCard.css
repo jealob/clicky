@@ -25,6 +25,13 @@
   cursor: pointer;
 }
 
+.click-item img {
+  height: 100%;
+  width:100px;
+  display:block;
+  margin:auto;
+}
+
 @media (max-width: 750px){
   .click-item {
       margin: 10px;
