@@ -9,7 +9,7 @@ export const NavBar = (props) => (
                     {/* <img alt="React" src="./assets/images/react.png"></img> */}
                 </a>
             </li>
-            <li >
+            <li className="score">
                 {props.state}
             </li>
             <li onChange={props.handleTopScore()}>

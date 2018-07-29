@@ -88,3 +88,9 @@ white-space:nowrap;
     padding: 8px;
     font-weight: 600;
 }
+
+.container {
+    display:block;
+    margin:auto;
+    max-width:925px;
+}

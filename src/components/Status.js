@@ -1,7 +1,7 @@
 import React from "react";
-import { NavBar, Header, Main, Footer } from "./components/Container";
-import imageList from "./images.json";
-import ImageCard from "./components/ImageCard";
+import { NavBar, Header, Main, Footer } from "./Container";
+import imageList from "../images.json";
+import ImageCard from "./ImageCard";
 
 class Status extends React.Component {
     // Setting the initial state of the Counter component
