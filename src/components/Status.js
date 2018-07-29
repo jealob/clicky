@@ -4,14 +4,17 @@ import imageList from "../images.json";
 import ImageCard from "./ImageCard";
 
 class Status extends React.Component {
-    // Setting the initial state of the Counter component
-    state = {
-        images: imageList,
-        unClickedImages: imageList,
-        score: 0,
-        topScore: 0,
-        gameStatus: "Click an image to start a game"
-    };
+    constructor(props) {
+        super(props);
+        // Setting the initial state of the Counter component
+        this.state = {
+            images: imageList,
+            unClickedImages: imageList,
+            score: 0,
+            topScore: 0,
+            gameStatus: "Click an image to start a game",
+        };
+    }
 
     handleTopScore = () => {
         if (this.state.score > this.state.topScore) {
@@ -25,7 +28,8 @@ class Status extends React.Component {
         this.setState({
             score: 0,
             unClickedImages: imageList,
-            gameStatus: "You guessed Incorrectly!"
+            gameStatus: "You guessed Incorrectly!",
+            effect: "incorrect"
         });
     }
 
@@ -33,6 +37,7 @@ class Status extends React.Component {
         this.setState({
             score: this.state.score + 1,
             gameStatus: "You guessed Correctly!",
+            effect: "correct"
         });
     }
 
@@ -57,17 +62,19 @@ class Status extends React.Component {
 
     // The game logic
     clickImageEvent = (id) => {
-        this.handleTopScore();
         this.filterImage(id);
         this.checkImage(id);
-        this.shuffleImages();
     }
 
     render() {
+        // Shuffle image card as game loads
+        this.shuffleImages();
         return (
             <div>
                 <NavBar
+                    handleWinner={this.handleWinner}
                     handleTopScore={this.handleTopScore}
+                    effect={this.state.effect}
                     state={this.state.gameStatus}
                     score={this.state.score}
                     topScore={this.state.topScore}>
@@ -92,4 +99,4 @@ class Status extends React.Component {
     }
 }
 
-export default Status
+export default Status;

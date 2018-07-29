@@ -1,19 +1,18 @@
 import React from "react";
 import "./Container.css";
 
+
 export const NavBar = (props) => (
-    <nav className="navbar">
+    <nav className="navbar" onChange={props.handleTopScore()}>
         <ul>
             <li className="brand">
-                <a href="/">{props.children}
-                    {/* <img alt="React" src="./assets/images/react.png"></img> */}
-                </a>
+                <a href="/">{props.children}</a>
             </li>
-            <li className="score">
+            <li className={props.effect || "normal"}>
                 {props.state}
             </li>
-            <li onChange={props.handleTopScore()}>
-               Score: {props.score} | Top Score: {props.topScore}
+            <li>
+                Score: {props.score} | Top Score: {props.topScore}
             </li>
         </ul>
     </nav>
@@ -27,9 +26,9 @@ export const Header = (props) => (
 );
 
 export const Main = (props) => (
-    <main className="container">
-        {props.children}
-    </main>
+    <main className={props.effect || "container" }>
+        { props.children }
+    </main >
 );
 
 export const Footer = (props) => (

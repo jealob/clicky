@@ -94,3 +94,38 @@ white-space:nowrap;
     margin:auto;
     max-width:925px;
 }
+.container-wrong {
+    background:blue;
+}
+
+.correct {
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 40.5ss; /* Safari 4.0 - 8.0 */
+    animation-name: correct-key;
+    animation-duration: 0.5s;
+}
+
+@keyframes correct-key {
+    from {color: green;}
+    to {color: white;}
+}
+
+@keyframes incorrect-key {
+    from {color: red;}
+    to {color: white;}
+}
+
+.normal {
+    color:white;
+}
+
+.incorrect{
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+    animation-name: incorrect-key;
+    animation-duration: 0.5s;
+}
