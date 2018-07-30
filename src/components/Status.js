@@ -39,6 +39,7 @@ class Status extends React.Component {
             gameStatus: "You guessed Correctly!",
             effect: "correct"
         });
+        this.handleTopScore();
     }
 
     // Filter out the clicked image from list of unclicked images
@@ -60,7 +61,7 @@ class Status extends React.Component {
         this.filterImage(id);
         // Check if clicked image exist on current list of unclicked images 
         (this.state.unClickedImages.filter(image => image.id === id).length === 0) ? this.handleIncorrect() : this.handleCorrect();
-        this.handleTopScore();
+        
     }
 
     render() {
